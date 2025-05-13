@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResearchFriend | Dein Guide zum perfekten Systematic Literature Review</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #3A405A;
+            --light-blue: #AEC5EB;
+            --dark-green: #5C6B29;
+            --light-green: #E9EDC9;
+            --very-light-yellow: #FFF0C2;
+            --light-orange: #FFD098;
+            --salmon: #E38A7C;
+            --light-pink: #FCC0CC;
+            --medium-pink: #E292AD;
+            --dark-pink: #D16A8A;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #FFFFFF;
+            color: #000000;
+            line-height: 1.6;
+            font-size: 12px;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+        }
+        
+        h4, h5, h6 {
+            font-weight: 700;
+        }
+        
+        .section-container {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        
+        .note-container {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            min-height: 100px;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        .checklist-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .tip-box {
+            background-color: var(--light-green);
+            border-left: 4px solid var(--dark-green);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+        
+        .warning-box {
+            background-color: var(--light-pink);
+            border-left: 4px solid var(--dark-pink);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0.25rem;
+        }
+        
+        .step-card {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 4px solid var(--light-blue);
+        }
+        
+        .step-number {
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 0.75rem;
+        }
+        
+        .nav-pills {
+            background-color: var(--very-light-yellow);
+            border-radius: 2rem;
+            padding: 0.25rem;
+        }
+        
+        .nav-pill {
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            color: var(--dark-blue);
+        }
+        
+        .nav-pill:hover, .nav-pill.active {
+            background-color: var(--light-orange);
+        }
+        
+        .btn-primary {
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+            padding: 0.5rem 1.5rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+            color: white;
+        }
+        
+        .section-header {
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .subsection-header {
+            background-color: var(--very-light-yellow);
+            padding: 0.75rem;
+            border-radius: 0.25rem;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background-color: var(--light-blue);
+            color: var(--dark-blue);
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .toc-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            cursor: pointer;
+        }
+        
+        .toc-item:hover {
+            background-color: var(--very-light-yellow);
+        }
+        
+        .mascot-container {
+            position: relative;
+            text-align: center;
+            margin: 1rem;
+        }
+        
+        .chickie-image {
+            max-height: 150px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white py-4 border-b">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <img src="chickie_zeigt_wohin.png" alt="ResearchFriend Maskottchen" class="chickie-image" style="height: 60px;">
+                    <h1 class="text-3xl font-bold ml-2" style="color: var(--dark-blue);">ResearchFriend</h1>
+                </div>
+                <div>
+                    <button class="btn-primary" id="hilfe-btn">Hilfe</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="intro" class="mb-12">
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 mb-8 flex items-center">
+                <div class="mr-8">
+                    <h2 class="text-4xl font-bold mb-4" style="color: var(--dark-blue);">Schritt für Schritt zu deinem perfekten SLR</h2>
+                    <p class="text-lg mb-4">Starte jetzt mit deinem Systematic Literature Review!</p>
+                    <p class="mb-6">Diese Plattform führt dich durch alle wichtigen Schritte, um einen erfolgreichen und methodisch korrekten Systematic Literature Review zu erstellen.</p>
+                    <div class="flex space-x-4">
+                        <a href="#start" class="bg-green-200 hover:bg-green-300 text-green-800 font-bold py-2 px-4 rounded-lg transition-colors duration-200">
+                            Start
+                        </a>
+                        <a href="#warum-slr" class="bg-yellow-100 hover:bg-yellow-200 text-yellow-800 font-bold py-2 px-4 rounded-lg transition-colors duration-200">
+                            Weitere Infos
+                        </a>
+                    </div>
+                </div>
+                <div class="flex-shrink-0">
+                    <img src="chicki_graduation.png" alt="Chickie mit Abschlusskappe" class="chickie-image" style="height: 150px;">
+                </div>
+            </div>
+
+            <div class="flex justify-center mb-8">
+                <div class="grid grid-cols-6 gap-2 px-4 py-2 bg-gray-50 rounded-full">
+                    <a href="#suchstrategie" class="nav-pill text-center text-sm px-3 py-1">Suchstrategie</a>
+                    <a href="#recherche" class="nav-pill text-center text-sm px-3 py-1">Recherche</a>
+                    <a href="#bewertung" class="nav-pill text-center text-sm px-3 py-1">Bewertung</a>
+                    <a href="#auswahl" class="nav-pill text-center text-sm px-3 py-1">Auswahl</a>
+                    <a href="#gliederung" class="nav-pill text-center text-sm px-3 py-1">Gliederung</a>
+                    <a href="#schreiben" class="nav-pill text-center text-sm px-3 py-1">Schreiben</a>
+                </div>
+            </div>
+
+            <div id="warum-slr" class="bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-2xl font-bold mb-4" style="color: var(--dark-blue);">Was ist ein Systematic Literature Review?</h3>
+                <div class="flex items-start">
+                    <div class="flex-grow pr-4">
+                        <p class="mb-4">Ein Systematic Literature Review (SLR) ist eine Art Literaturreview, die eine spezifische Forschungsfrage durch systematische und umfassende Identifizierung, Bewertung und Synthese aller relevanten Studien zu einem bestimmten Thema beantwortet.</p>
+                        <p>Forscher verwenden eine strenge und transparente Methodik, um Studien aus verschiedenen Quellen zu suchen und auszuwählen. Die Ergebnisse werden synthetisiert und analysiert, um Schlussfolgerungen über das Thema zu ziehen.</p>
+                        <div class="tip-box mt-4">
+                            <h4 class="font-bold">Wusstest du schon?</h4>
+                            <p>Systematische Reviews gelten als höchste Evidenzstufe in der evidenzbasierten Praxis, da sie einen standardisierten, transparenten und replizierbaren Ansatz zur Synthese der verfügbaren Evidenz verwenden.</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 ml-4">
+                        <img src="chickie_hat_eine_idee.png" alt="Chickie mit Glühbirne" class="chickie-image" style="height: 120px;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="toc" class="mb-12">
+            <div class="section-header">
+                <img src="chickie_zeigt_wohin.png" alt="Chickie Maskottchen" class="mr-2" style="height: 40px;">
+                <h2 class="text-2xl font-bold">Inhaltsverzeichnis</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="font-bold mb-2 text-lg" style="color: var(--dark-blue);">Vorbereitungsphase</h3>
+                    <div class="toc-item"><a href="#start">1. Forschungsfrage formulieren</a></div>
+                    <div class="toc-item"><a href="#suchstrategie">2. Suchstrategie entwickeln</a></div>
+                    <div class="toc-item"><a href="#recherche">3. Literaturrecherche durchführen</a></div>
+                    <div class="toc-item"><a href="#auswahl">4. Studienauswahl</a></div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <h3 class="font-bold mb-2 text-lg" style="color: var(--dark-blue);">Analyse & Schreibphase</h3>
+                    <div class="toc-item"><a href="#bewertung">5. Qualitätsbewertung</a></div>
+                    <div class="toc-item"><a href="#datenextraktion">6. Datenextraktion</a></div>
+                    <div class="toc-item"><a href="#synthese">7. Synthese und Analyse</a></div>
+                    <div class="toc-item"><a href="#schreiben">8. Berichterstellung</a></div>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4 md:col-span-2">
+                    <h3 class="font-bold mb-2 text-lg" style="color: var(--dark-blue);">Tools und Ressourcen</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <div class="toc-item"><a href="#tools-literatur">Literaturverwaltung</a></div>
+                            <div class="toc-item"><a href="#tools-suche">Suchtools</a></div>
+                        </div>
+                        <div>
+                            <div class="toc-item"><a href="#tools-analyse">Analysetools</a></div>
+                            <div class="toc-item"><a href="#tools-schreib">Schreibtools</a></div>
+                        </div>
+                        <div>
+                            <div class="toc-item"><a href="#checklisten">Checklisten</a></div>
+                            <div class="toc-item"><a href="#vorlagen">Vorlagen</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mascot-container mt-4">
+                <img src="chicki_lupe.png" alt="Chickie mit Lupe" class="chickie-image" style="height: 100px;">
+                 </div>
+        </section>
+
+        <section id="start" class="mb-12">
+            <div class="section-header">
+                <div class="step-number">1</div>
+                <h2 class="text-2xl font-bold">Forschungsfrage formulieren</h2>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Definiere den Fokus deiner Review</h3>
+                        <p class="mb-4">Eine präzise und gut definierte Forschungsfrage ist das Herzstück eines jeden SLR. Sie bestimmt den Umfang, die Richtung und die Methodik deines Reviews.</p>
+                        
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Das PICo-Framework</h4>
+                        </div>
+                        <p class="mb-4">Für qualitative Forschungsfragen verwende das PICo-Framework:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                            <div class="bg-blue-50 p-4 rounded">
+                                <h5 class="font-bold">P - Population/Problem</h5>
+                                <p>Die Zielgruppe oder das Problem, das untersucht werden soll</p>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded">
+                                <h5 class="font-bold">I - Interest</h5>
+                                <p>Das spezielle Interesse, Phänomen oder die Erfahrung, die im Mittelpunkt steht</p>
+                            </div>
+                            <div class="bg-yellow-50 p-4 rounded">
+                                <h5 class="font-bold">Co - Context</h5>
+                                <p>Der Zusammenhang oder das Umfeld, in dem das Interesse untersucht wird</p>
+                            </div>
+                        </div>
+                        
+                        <div class="tip-box">
+                            <h4 class="font-bold">Tipp von Chickie:</h4>
+                            <p>Deine Forschungsfrage sollte spezifisch, relevant und beantwortbar sein. Eine zu breite Frage führt zu einer unüberschaubaren Menge an Literatur!</p>
+                        </div>
+                        
+                        <div class="mt-6 mb-4">
+                            <h4 class="font-bold">PICo-Worksheet:</h4>
+                            <p class="mb-2">Fülle die folgenden Felder aus, um deine Forschungsfrage zu strukturieren:</p>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Population / Patient / Problem:</label>
+                                <textarea class="w-full p-2 border rounded note-container" rows="2" placeholder="Beschreibe deine Zielgruppe oder das Problem..."></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Interest:</label>
+                                <textarea class="w-full p-2 border rounded note-container" rows="2" placeholder="Beschreibe dein Forschungsinteresse..."></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2">Context:</label>
+                                <textarea class="w-full p-2 border rounded note-container" rows="2" placeholder="Beschreibe den Kontext deiner Untersuchung..."></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2 font-bold">Vollständige Forschungsfrage:</label>
+                                <textarea class="w-full p-2 border rounded note-container" rows="3" placeholder="Formuliere hier deine vollständige Forschungsfrage..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="warning-box">
+                            <h4 class="font-bold">Häufige Fehler vermeiden:</h4>
+                            <ul class="list-disc pl-5">
+                                <li>Zu breite oder vage Forschungsfrage</li>
+                                <li>Mehrere Fragestellungen gleichzeitig bearbeiten</li>
+                                <li>Unklare Begriffsdefinitionen</li>
+                                <li>Fragestellung, die nicht durch Literatur beantwortbar ist</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-1">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Checkliste: Gute Forschungsfrage</h3>
+                        <div class="mb-4">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check1" class="mr-2">
+                                <label for="check1">Ist spezifisch und klar formuliert</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check2" class="mr-2">
+                                <label for="check2">Verwendet das PICo-Framework</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check3" class="mr-2">
+                                <label for="check3">Ist durch Literatur beantwortbar</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check4" class="mr-2">
+                                <label for="check4">Hat einen angemessenen Umfang</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check5" class="mr-2">
+                                <label for="check5">Ist für dein Fachgebiet relevant</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check6" class="mr-2">
+                                <label for="check6">Alle Begriffe sind klar definiert</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="check7" class="mr-2">
+                                <label for="check7">Von Betreuer:in abgesegnet</label>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h4 class="font-bold mb-2">Notizen:</h4>
+                            <textarea class="w-full p-2 border rounded note-container" rows="10" placeholder="Mache dir hier Notizen zur Entwicklung deiner Forschungsfrage..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mascot-container mt-6">
+                        <img src="chickie_hat_eine_idee.png" alt="Chickie mit einer Glühbirne" class="chickie-image" style="height: 100px;">
+                        <div class="bg-yellow-100 rounded-lg p-3 mt-2">
+                            <p class="text-sm italic">Ein gut definiertes Forschungsproblem ist die halbe Miete für einen erfolgreichen SLR!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="suchstrategie" class="mb-12">
+            <div class="section-header">
+                <div class="step-number">2</div>
+                <h2 class="text-2xl font-bold">Suchstrategie entwickeln</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Erstellen Sie eine Gliederung und legen Sie eine Strategie fest</h3>
+                        <p class="mb-4">Eine effektive Suchstrategie ist entscheidend, um alle relevanten Studien zu finden und gleichzeitig die Suche überschaubar zu halten.</p>
+
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Identifiziere relevante Suchbegriffe</h4>
+                        </div>
+                        <p class="mb-4">Leite aus deiner PICo-Frage Schlüsselkonzepte und Suchbegriffe ab:</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-blue-50 p-4 rounded">
+                                <h5 class="font-bold">P - Begriffe</h5>
+                                <textarea class="w-full p-2 border rounded note-container mt-2" rows="3" placeholder="z.B. Manager, Führungskräfte, CEO, Vorstand..."></textarea>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded">
+                                <h5 class="font-bold">I - Begriffe</h5>
+                                <textarea class="w-full p-2 border rounded note-container mt-2" rows="3" placeholder="z.B. digitale Transformation, Digitalisierung..."></textarea>
+                            </div>
+                            <div class="bg-yellow-50 p-4 rounded">
+                                <h5 class="font-bold">Co - Begriffe</h5>
+                                <textarea class="w-full p-2 border rounded note-container mt-2" rows="3" placeholder="z.B. KMU, Mittelstand, Deutschland..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Synonyme und verwandte Begriffe finden</h4>
+                        </div>
+                        <p class="mb-4">Erweitere deine Suchbegriffe um Synonyme, ähnliche Konzepte und Variationen:</p>
+                        <div class="table-container">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Hauptbegriff</th>
+                                        <th>Synonyme</th>
+                                        <th>Verwandte Begriffe</th>
+                                        <th>Englische Übersetzungen</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="Hauptbegriff 1" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Synonyme" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Verwandte Begriffe" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Übersetzungen" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="Hauptbegriff 2" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Synonyme" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Verwandte Begriffe" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Übersetzungen" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="Hauptbegriff 3" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Synonyme" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Verwandte Begriffe" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Übersetzungen" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="subsection-header mt-6">
+                            <h4 class="font-bold">Boolesche Operatoren und Suchsyntax</h4>
+                        </div>
+                        <p class="mb-4">Verwende Boolesche Operatoren, um deine Suchbegriffe zu kombinieren:</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                            <div class="bg-blue-50 p-4 rounded">
+                                <h5 class="font-bold">AND</h5>
+                                <p>Schränkt die Suche ein, alle Begriffe müssen vorkommen</p>
+                                <p class="mt-2 font-italic text-sm">Beispiel: Digitalisierung AND KMU</p>
+                            </div>
+                            <div class="bg-yellow-50 p-4 rounded">
+                                <h5 class="font-bold">OR</h5>
+                                <p>Erweitert die Suche, einer der Begriffe muss vorkommen</p>
+                                <p class="mt-2 font-italic text-sm">Beispiel: CEO OR Manager OR Führungskraft</p>
+                            </div>
+                            <div class="bg-red-50 p-4 rounded">
+                                <h5 class="font-bold">NOT</h5>
+                                <p>Schließt Begriffe aus der Suche aus</p>
+                                <p class="mt-2 font-italic text-sm">Beispiel: Unternehmen NOT Konzern</p>
+                            </div>
+                        </div>
+
+                        <div class="tip-box">
+                            <h4 class="font-bold">Weitere nützliche Suchfunktionen:</h4>
+                            <ul class="list-disc pl-5">
+                                <li><strong>Trunkierung:</strong> Manager* (findet Manager, Managerin, Managerinnen...)</li>
+                                <li><strong>Platzhalter:</strong> Wom?n (findet Woman und Women)</li>
+                                <li><strong>Phrasensuche:</strong> "digitale Transformation" (exakt diese Wortfolge)</li>
+                                <li><strong>Klammern:</strong> (CEO OR Manager) AND (KMU OR Mittelstand)</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection-header mt-6">
+                            <h4 class="font-bold">Formuliere deine finale Suchstrategie</h4>
+                        </div>
+                        <p class="mb-2">Kombiniere deine Suchbegriffe zu einer vollständigen Suchstrategie:</p>
+                        <textarea class="w-full p-2 border rounded note-container" rows="4" placeholder="(CEO OR Manager* OR Führungskraft*) AND (Digitalis* OR 'digitale Transformation') AND (KMU OR Mittelstand OR 'kleine* Unternehmen')"></textarea>
+                        
+                        <div class="warning-box mt-4">
+                            <h4 class="font-bold">Dokumentation ist wichtig!</h4>
+                            <p>Für eine transparente und nachvollziehbare Methodik ist es entscheidend, dass du alle Schritte deiner Suchstrategie dokumentierst, einschließlich:</p>
+                            <ul class="list-disc pl-5">
+                                <li>Verwendete Datenbanken und Suchplattformen</li>
+                                <li>Exakte Suchbegriffe und -kombinationen</li>
+                                <li>Angewandte Filter (Zeitraum, Sprache, Dokumenttyp)</li>
+                                <li>Datum der Durchführung der Suche</li>
+                                <li>Anzahl der gefundenen und ausgewählten Treffer</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex justify-center mt-6">
+                           <img src="chicki_lupe.png" alt="Chickie mit Lupe" class="chickie-image" style="height: 120px;">
+                           </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-1">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Checkliste: Suchstrategie</h3>
+                        <div class="mb-4">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="search1" class="mr-2">
+                                <label for="search1">PICo-Elemente identifiziert</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="search2" class="mr-2">
+                                <label for="search2">Synonyme und verwandte Begriffe gesammelt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="search3" class="mr-2">
+                                <label for="search3">Englische Übersetzungen erstellt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="search4" class="mr-2">
+                                <label for="search4">Boolesche Operatoren korrekt verwendet</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="search5" class="mr-2">
+                                <label for="search5">Suchstrategie mit Fachexperten besprochen</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="search6" class="mr-2">
+                                <label for="search6">Testsuche durchgeführt und optimiert</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="search7" class="mr-2">
+                                <label for="search7">Suchstrategie dokumentiert</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="search8" class="mr-2">
+                                <label for="search8">Relevante Datenbanken ausgewählt</label>
+                            </div>
+                        </div>
+
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Ein- und Ausschlusskriterien</h4>
+                        </div>
+                        <p class="mb-2">Definiere klare Kriterien für die Auswahl von Literatur:</p>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-1 font-bold">Einschlusskriterien:</label>
+                            <textarea class="w-full p-2 border rounded note-container" rows="4" placeholder="z.B. Peer-reviewed Artikel, empirische Studien, Veröffentlichung ab 2015..."></textarea>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-gray-700 mb-1 font-bold">Ausschlusskriterien:</label>
+                            <textarea class="w-full p-2 border rounded note-container" rows="4" placeholder="z.B. nicht-englische/deutsche Publikationen, graue Literatur, Konferenzberichte..."></textarea>
+                        </div>
+
+                        <div class="mt-4">
+                            <h4 class="font-bold mb-2">Notizen:</h4>
+                            <textarea class="w-full p-2 border rounded note-container" rows="4" placeholder="Mache dir hier Notizen zur Entwicklung deiner Suchstrategie..."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="recherche" class="mb-12">
+            <div class="section-header">
+                <div class="step-number">3</div>
+                <h2 class="text-2xl font-bold">Literaturrecherche durchführen</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Identifiziere relevante Studien</h3>
+                        <p class="mb-4">Mit deiner ausgearbeiteten Suchstrategie führst du nun die eigentliche Literaturrecherche durch. Diese sollte systematisch, gründlich und transparent erfolgen.</p>
+
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Auswahl relevanter Datenbanken</h4>
+                        </div>
+                        <p class="mb-4">Je nach Fachgebiet sind unterschiedliche Datenbanken relevant. Hier eine Auswahl wichtiger Quellen:</p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-50 p-4 rounded border">
+                                <h5 class="font-bold">Wissenschaftliche Datenbanken</h5>
+                                <ul class="list-disc pl-5 mt-2">
+                                    <li>Google Scholar</li>
+                                    <li>EBSCO Business Source Complete</li>
+                                    <li>Web of Science</li>
+                                    <li>Scopus</li>
+                                    <li>JSTOR</li>
+                                    <li>SpringerLink</li>
+                                    <li>ScienceDirect</li>
+                                    <li>Emerald Insight</li>
+                                    <li>WISO (deutschsprachig)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded border">
+                                <h5 class="font-bold">Graue Literatur & andere Quellen</h5>
+                                <ul class="list-disc pl-5 mt-2">
+                                    <li>SSRN (Social Science Research Network)</li>
+                                    <li>ResearchGate</li>
+                                    <li>Universitätsrepositorien</li>
+                                    <li>OpenGrey</li>
+                                    <li>Fachspezifische Datenbanken</li>
+                                    <li>Konferenzpublikationen</li>
+                                    <li>Institutionelle Webseiten</li>
+                                    <li>Dissertations- und Thesendatenbanken</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Die Suche durchführen und dokumentieren</h4>
+                        </div>
+                        <p class="mb-4">Dokumentiere deine Suche systematisch in einer Tabelle für jede Datenbank:</p>
+
+                        <div class="table-container">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Datenbank</th>
+                                        <th>Suchstrategie</th>
+                                        <th>Filter</th>
+                                        <th>Datum</th>
+                                        <th>Anzahl Treffer</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="z.B. Scopus" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Verwendete Suchbegriffe" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Angewandte Filter" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <input type="date" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <input type="number" placeholder="Anzahl" class="w-full p-1 border">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="z.B. Web of Science" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Verwendete Suchbegriffe" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Angewandte Filter" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <input type="date" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <input type="number" placeholder="Anzahl" class="w-full p-1 border">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="z.B. Google Scholar" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Verwendete Suchbegriffe" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Angewandte Filter" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                        <td>
+                                            <input type="date" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <input type="number" placeholder="Anzahl" class="w-full p-1 border">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="tip-box mt-6">
+                            <h4 class="font-bold">Effiziente Datenbanksuche:</h4>
+                            <ul class="list-disc pl-5">
+                                <li>Nutze die erweiterte Suchfunktion der Datenbanken</li>
+                                <li>Speichere deine Suchhistorie, wenn möglich</li>
+                                <li>Exportiere Suchergebnisse in ein Literaturverwaltungsprogramm (z.B. Zotero)</li>
+                                <li>Führe eine Test-/Pilotsuche durch und passe deine Strategie an</li>
+                                <li>Überlege, ob du Limits setzen möchtest (Zeitraum, Sprache, Publikationstyp)</li>
+                            </ul>
+                        </div>
+
+                        <div class="subsection-header mt-6">
+                            <h4 class="font-bold">Umgang mit den Suchergebnissen</h4>
+                        </div>
+                        <p class="mb-4">Nach der Suche solltest du:</p>
+                        <ol class="list-decimal pl-5 mb-4">
+                            <li>Alle Treffer in ein Literaturverwaltungsprogramm exportieren</li>
+                            <li>Duplikate identifizieren und entfernen</li>
+                            <li>Eine erste Sichtung nach Titel und Abstract durchführen</li>
+                            <li>Relevante Volltexte beschaffen</li>
+                            <li>Einen Suchbericht erstellen (siehe PRISMA-Flussdiagramm im nächsten Schritt)</li>
+                        </ol>
+
+                        <div class="warning-box">
+                            <h4 class="font-bold">Häufige Probleme und Lösungen:</h4>
+                            <ul class="list-disc pl-5">
+                                <li><strong>Zu viele Treffer?</strong> Verfeinere deine Suchbegriffe oder füge weitere Einschränkungen hinzu.</li>
+                                <li><strong>Zu wenige Treffer?</strong> Erweitere deine Suchbegriffe oder versuche allgemeinere Synonyme.</li>
+                                <li><strong>Keine Volltexte zugänglich?</strong> Nutze Fernleihe, ResearchGate oder kontaktiere die Autoren direkt.</li>
+                                <li><strong>Überfordert mit der Datenmenge?</strong> Nutze Screening-Tools wie Rayyan oder Covidence.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-1">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Checkliste: Literaturrecherche</h3>
+                        <div class="mb-4">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="lit1" class="mr-2">
+                                <label for="lit1">Mindestens 3-5 relevante Datenbanken ausgewählt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="lit2" class="mr-2">
+                                <label for="lit2">Suchstrategie an jeweilige Datenbank angepasst</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="lit3" class="mr-2">
+                                <label for="lit3">Alle Suchanfragen dokumentiert (inkl. Datum)</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="lit4" class="mr-2">
+                                <label for="lit4">Ergebnisse in Literaturverwaltungsprogramm exportiert</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="lit5" class="mr-2">
+                                <label for="lit5">Duplikate entfernt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="lit6" class="mr-2">
+                                <label for="lit6">Graue Literatur berücksichtigt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="lit7" class="mr-2">
+                                <label for="lit7">Schneeballsystem angewendet</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="lit8" class="mr-2">
+                                <label for="lit8">PRISMA-Flussdiagramm vorbereitet</label>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h4 class="font-bold mb-2">Notizen:</h4>
+                            <textarea class="w-full p-2 border rounded note-container" rows="6" placeholder="Mache dir hier Notizen zu deiner Literaturrecherche..."></textarea>
+                        </div>
+                        
+                        <div class="mascot-container mt-6">
+                            <img src="chickie_list_ein_buch.png" alt="Chickie mit Buch" class="chickie-image" style="height: 100px;">
+                            <div class="bg-yellow-100 rounded-lg p-3 mt-2">
+                                <p class="text-sm italic">Eine gründliche Literaturrecherche ist das Fundament eines gelungenen Systematic Literature Review!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="auswahl" class="mb-12">
+            <div class="section-header">
+                <div class="step-number">4</div>
+                <h2 class="text-2xl font-bold">Studienauswahl</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Screening-Prozess durchführen</h3>
+                        <p class="mb-4">Nach der Literaturrecherche musst du entscheiden, welche der gefundenen Studien tatsächlich in deine Review einbezogen werden sollen. Dieser Screening-Prozess erfolgt in mehreren Stufen.</p>
+                        
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Screening-Stufen</h4>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-50 p-4 rounded border">
+                                <h5 class="font-bold">1. Titel & Abstract Screening</h5>
+                                <ul class="list-disc pl-5 mt-2">
+                                    <li>Überprüfe Titel und Abstracts auf Relevanz</li>
+                                    <li>Wende Ein- und Ausschlusskriterien an</li>
+                                    <li>Dokumentiere Ausschlussgründe</li>
+                                    <li>Bei Unsicherheit: im Zweifel einschließen</li>
+                                    <li>Idealerweise von zwei Personen durchgeführt</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded border">
+                                <h5 class="font-bold">2. Volltext Screening</h5>
+                                <ul class="list-disc pl-5 mt-2">
+                                    <li>Beschaffe Volltexte der verbleibenden Studien</li>
+                                    <li>Detailliertes Screening anhand Ein-/Ausschlusskriterien</li>
+                                    <li>Konkrete Dokumentation der Ausschlussgründe</li>
+                                    <li>Bei Unstimmigkeiten zwischen Reviewern: Diskussion oder dritte Meinung</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection-header">
+                            <h4 class="font-bold">PRISMA-Flussdiagramm erstellen</h4>
+                        </div>
+                        <p class="mb-4">Das PRISMA-Flussdiagramm ist ein Standard zur transparenten Darstellung des Auswahlprozesses:</p>
+                        
+                        <div class="bg-white border rounded-lg p-4 mb-6">
+                            <h5 class="font-bold mb-2">PRISMA-Flussdiagramm Template:</h5>
+                            <div class="grid grid-cols-1 gap-2">
+                                <div class="border p-3 text-center bg-gray-50">
+                                    <p class="font-bold">Identifikation</p>
+                                    <p>Anzahl der Datensätze aus Datenbanksuche: <input type="number" class="border w-16 p-1"></p>
+                                    <p>Anzahl der Datensätze aus anderen Quellen: <input type="number" class="border w-16 p-1"></p>
+                                    <div class="border-b-2 border-gray-300 w-1/4 mx-auto my-2"></div>
+                                </div>
+                                <div class="border p-3 text-center bg-gray-50">
+                                    <p class="font-bold">Screening</p>
+                                    <p>Anzahl der Datensätze nach Entfernung von Duplikaten: <input type="number" class="border w-16 p-1"></p>
+                                    <p>Anzahl der ausgeschlossenen Datensätze: <input type="number" class="border w-16 p-1"></p>
+                                    <div class="border-b-2 border-gray-300 w-1/4 mx-auto my-2"></div>
+                                </div>
+                                <div class="border p-3 text-center bg-gray-50">
+                                    <p class="font-bold">Eignung</p>
+                                    <p>Anzahl der im Volltext bewerteten Artikel: <input type="number" class="border w-16 p-1"></p>
+                                    <p>Anzahl ausgeschlossener Volltextartikel: <input type="number" class="border w-16 p-1"></p>
+                                    <div class="border-b-2 border-gray-300 w-1/4 mx-auto my-2"></div>
+                                </div>
+                                <div class="border p-3 text-center bg-gray-50">
+                                    <p class="font-bold">Eingeschlossen</p>
+                                    <p>Anzahl der in die Synthese einbezogenen Studien: <input type="number" class="border w-16 p-1"></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Ausschlussgründe dokumentieren</h4>
+                        </div>
+                        <p class="mb-4">Führe eine Tabelle mit detaillierten Ausschlussgründen für alle im Volltext-Screening ausgeschlossenen Studien:</p>
+                        
+                        <div class="table-container">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Autor & Jahr</th>
+                                        <th>Titel</th>
+                                        <th>Ausschlussgrund</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="z.B. Smith et al. (2020)" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <input type="text" placeholder="Titel der Studie" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <select class="w-full p-1 border">
+                                                <option>Ausschlussgrund wählen</option>
+                                                <option>Falscher Studientyp</option>
+                                                <option>Falsche Population</option>
+                                                <option>Falscher Kontext</option>
+                                                <option>Kein Volltext verfügbar</option>
+                                                <option>Sprache außerhalb der Kriterien</option>
+                                                <option>Außerhalb des Zeitraums</option>
+                                                <option>Andere (Notiz hinzufügen)</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="z.B. Müller et al. (2019)" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <input type="text" placeholder="Titel der Studie" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <select class="w-full p-1 border">
+                                                <option>Ausschlussgrund wählen</option>
+                                                <option>Falscher Studientyp</option>
+                                                <option>Falsche Population</option>
+                                                <option>Falscher Kontext</option>
+                                                <option>Kein Volltext verfügbar</option>
+                                                <option>Sprache außerhalb der Kriterien</option>
+                                                <option>Außerhalb des Zeitraums</option>
+                                                <option>Andere (Notiz hinzufügen)</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="tip-box mt-6">
+                            <h4 class="font-bold">Tipp von Chickie:</h4>
+                            <p>Nutze spezialisierte Screening-Tools wie Rayyan, Covidence oder DistillerSR, um den Prozess zu erleichtern - besonders wenn du mit einem Team arbeitest!</p>
+                        </div>
+                        
+                        <div class="flex justify-center mt-6">
+                           <img src="chickie_guckt_dumm.png" alt="Fröhliches Chickie" class="chickie-image" style="height: 120px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-1">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Checkliste: Studienauswahl</h3>
+                        <div class="mb-4">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="screen1" class="mr-2">
+                                <label for="screen1">Titel & Abstract Screening durchgeführt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="screen2" class="mr-2">
+                                <label for="screen2">Volltexte beschafft</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="screen3" class="mr-2">
+                                <label for="screen3">Volltext-Screening durchgeführt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="screen4" class="mr-2">
+                                <label for="screen4">Ein-/Ausschlusskriterien konsistent angewendet</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="screen5" class="mr-2">
+                                <label for="screen5">Ausschlussgründe dokumentiert</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="screen6" class="mr-2">
+                                <label for="screen6">PRISMA-Flussdiagramm erstellt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="screen7" class="mr-2">
+                                <label for="screen7">Finale Studienliste zusammengestellt</label>
+                            </div>
+                        </div>
+
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Häufige Gründe für einen Studienausschluss</h4>
+                        </div>
+                        <ul class="list-disc pl-5 mb-4">
+                            <li>Nicht relevantes Thema oder Forschungsfrage</li>
+                            <li>Falsche Population/Zielgruppe</li>
+                            <li>Falscher Kontext oder Setting</li>
+                            <li>Ungeeigneter Studientyp</li>
+                            <li>Unzureichende methodische Qualität</li>
+                            <li>Sprache außerhalb der definierten Kriterien</li>
+                            <li>Veröffentlichungszeitraum außerhalb der Kriterien</li>
+                            <li>Unzugänglicher Volltext</li>
+                            <li>Duplikat einer bereits eingeschlossenen Studie</li>
+                        </ul>
+
+                        <div class="mt-4">
+                            <h4 class="font-bold mb-2">Notizen:</h4>
+                            <textarea class="w-full p-2 border rounded note-container" rows="6" placeholder="Mache dir hier Notizen zum Screening-Prozess..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mascot-container mt-6">
+                        <img src="chickie_zeigt_wohin.png" alt="Chickie" class="chickie-image" style="height: 100px;">
+                        <div class="bg-yellow-100 rounded-lg p-3 mt-2">
+                            <p class="text-sm italic">Eine sorgfältige Studienauswahl ist entscheidend für die Qualität deiner Review!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="bewertung" class="mb-12">
+            <div class="section-header">
+                <div class="step-number">5</div>
+                <h2 class="text-2xl font-bold">Qualitätsbewertung</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Bewertung der methodischen Qualität</h3>
+                        <p class="mb-4">Die Qualitätsbewertung der eingeschlossenen Studien ist ein wichtiger Schritt, um die Verlässlichkeit der Ergebnisse einzuschätzen und die Stärke deiner Schlussfolgerungen zu fundieren.</p>
+                        
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Auswahl eines geeigneten Bewertungsinstruments</h4>
+                        </div>
+                        <p class="mb-4">Je nach Studiendesign gibt es verschiedene standardisierte Bewertungsinstrumente:</p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-gray-50 p-4 rounded border">
+                                <h5 class="font-bold">Für qualitative Studien</h5>
+                                <ul class="list-disc pl-5 mt-2">
+                                    <li>CASP (Critical Appraisal Skills Programme) Checklist</li>
+                                    <li>JBI Qualitative Assessment and Review Instrument</li>
+                                    <li>COREQ (Consolidated criteria for reporting qualitative research)</li>
+                                </ul>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded border">
+                                <h5 class="font-bold">Für quantitative Studien</h5>
+                                <ul class="list-disc pl-5 mt-2">
+                                    <li>STROBE (Strengthening the Reporting of Observational Studies in Epidemiology)</li>
+                                    <li>Cochrane Risk of Bias Tool (für RCTs)</li>
+                                    <li>JBI Critical Appraisal Checklist for verschiedene Studientypen</li>
+                                    <li>CONSORT (für randomisierte Studien)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Durchführung der Qualitätsbewertung</h4>
+                        </div>
+                        <p class="mb-4">Dokumentiere die Qualitätsbewertung für jede eingeschlossene Studie systematisch:</p>
+                        
+                        <div class="table-container">
+                            <table class="min-w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Autor & Jahr</th>
+                                        <th>Studiendesign</th>
+                                        <th>Bewertungsinstrument</th>
+                                        <th>Bewertungsergebnis</th>
+                                        <th>Stärken & Schwächen</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="z.B. Smith et al. (2020)" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <select class="w-full p-1 border">
+                                                <option>Studientyp wählen</option>
+                                                <option>Qualitativ - Interview</option>
+                                                <option>Qualitativ - Fokusgruppe</option>
+                                                <option>Quantitativ - Survey</option>
+                                                <option>Quantitativ - RCT</option>
+                                                <option>Quantitativ - Kohortenstudie</option>
+                                                <option>Mixed-Methods</option>
+                                                <option>Literaturreview</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" placeholder="z.B. CASP" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <select class="w-full p-1 border">
+                                                <option>Bewertung wählen</option>
+                                                <option>Hoch</option>
+                                                <option>Mittel</option>
+                                                <option>Niedrig</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Stärken und Schwächen" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" placeholder="z.B. Müller et al. (2019)" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <select class="w-full p-1 border">
+                                                <option>Studientyp wählen</option>
+                                                <option>Qualitativ - Interview</option>
+                                                <option>Qualitativ - Fokusgruppe</option>
+                                                <option>Quantitativ - Survey</option>
+                                                <option>Quantitativ - RCT</option>
+                                                <option>Quantitativ - Kohortenstudie</option>
+                                                <option>Mixed-Methods</option>
+                                                <option>Literaturreview</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input type="text" placeholder="z.B. STROBE" class="w-full p-1 border">
+                                        </td>
+                                        <td>
+                                            <select class="w-full p-1 border">
+                                                <option>Bewertung wählen</option>
+                                                <option>Hoch</option>
+                                                <option>Mittel</option>
+                                                <option>Niedrig</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <textarea placeholder="Stärken und Schwächen" class="w-full p-1 border" rows="2"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="tip-box mt-6">
+                            <h4 class="font-bold">Tipp von Chickie:</h4>
+                            <p>Eine niedrige methodische Qualität muss nicht automatisch zum Ausschluss der Studie führen, aber die Ergebnisse sollten entsprechend vorsichtiger interpretiert werden. Berücksichtige die Qualitätsbewertung in deiner Synthese und Diskussion!</p>
+                        </div>
+                        
+                        <div class="warning-box mt-4">
+                            <h4 class="font-bold">Wichtig:</h4>
+                            <p>Die Qualitätsbewertung sollte idealerweise von mindestens zwei unabhängigen Reviewern durchgeführt werden, um die Subjektivität zu reduzieren. Bei Unstimmigkeiten sollte eine Diskussion stattfinden oder eine dritte Person hinzugezogen werden.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-1">
+                    <div class="step-card">
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--dark-blue);">Checkliste: Qualitätsbewertung</h3>
+                        <div class="mb-4">
+                            <div class="checklist-item">
+                                <input type="checkbox" id="qual1" class="mr-2">
+                                <label for="qual1">Geeignete Bewertungsinstrumente ausgewählt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="qual2" class="mr-2">
+                                <label for="qual2">Bewertungskriterien dokumentiert</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="qual3" class="mr-2">
+                                <label for="qual3">Bewertung für alle Studien durchgeführt</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="qual4" class="mr-2">
+                                <label for="qual4">Bewertungsergebnisse systematisch erfasst</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="qual5" class="mr-2">
+                                <label for="qual5">Stärken und Schwächen identifiziert</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="qual6" class="mr-2">
+                                <label for="qual6">Bewertung von zwei unabhängigen Reviewern</label>
+                            </div>
+                            <div class="checklist-item">
+                                <input type="checkbox" id="qual7" class="mr-2">
+                                <label for="qual7">Meinungsverschiedenheiten gelöst</label>
+                            </div>
+                        </div>
+
+                        <div class="subsection-header">
+                            <h4 class="font-bold">Qualitätskriterien nach Studientyp</h4>
+                        </div>
+                        <div class="mb-4">
+                            <h5 class="font-semibold">Qualitative Studien:</h5>
+                            <ul class="list-disc pl-5 mb-2">
+                                <li>Klare Zielsetzung</li>
+                                <li>Geeignete Methodik</li>
+                                <li>Nachvollziehbare Rekrutierung</li>
+                                <li>Angemessene Datensammlung</li>
+                                <li>Reflexivität der Forscher</li>
+                                <li>Ethische Aspekte</li>
+                                <li>Rigorose Datenanalyse</li>
+                                <li>Klare Ergebnisdarstellung</li>
+                            </ul>
+                            
+                            <h5 class="font-semibold">Quantitative Studien:</h5>
+                            <ul class="list-disc pl-5">
+                                <li>Angemessenes Studiendesign</li>
+                                <li>Repräsentative Stichprobe</li>
+                                <li>Validierte Messinstrumente</li>
+                                <li>Kontrollierte Störvariablen</li>
+                                <li>Geeignete statistische Verfahren</li>
+                                <li>Umgang mit fehlenden Daten</li>
+                                <li>Präzise Ergebnisdarstellung</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4">
+                            <h4 class="font-bold mb-2">Notizen:</h4>
+                            <textarea class="w-full p-2 border rounded note-container" rows="6" placeholder="Mache dir hier Notizen zur Qualitätsbewertung..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="mascot-container mt-6">
+                        <img src="chicki_lupe.png" alt="Chickie mit Lupe" class="chickie-image" style="height: 100px;">
+                         <div class="bg-yellow-100 rounded-lg p-3 mt-2">
+                            <p class="text-sm italic">Bei der Qualitätsbewertung geht es nicht darum, Studien zu kritisieren, sondern ihre Stärken und Grenzen zu verstehen!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer class="bg-gray-100 py-6 mt-12 rounded-lg">
+            <div class="container mx-auto px-4 text-center">
+                <p class="mb-2">© 2025 ResearchFriend - Dein Guide zum perfekten Systematic Literature Review</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-600 hover:text-gray-800">Datenschutz</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800">Impressum</a>
+                    <a href="#" class="text-gray-600 hover:text-gray-800">Kontakt</a>
+                </div>
+                <div class="flex justify-center mt-4">
+                    <img src="chickie_zeigt_wohin.png" alt="ResearchFriend Maskottchen" class="chickie-image" style="height: 60px;">
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+    <script>
+        // JavaScript für interaktive Elemente
+        document.addEventListener('DOMContentLoaded', function() {
+            // Checklisten-Funktionalität
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const label = this.nextElementSibling;
+                    if (this.checked) {
+                        label.classList.add('line-through', 'text-gray-500');
+                    } else {
+                        label.classList.remove('line-through', 'text-gray-500');
+                    }
+                });
+            });
+            
+            // Navigationspills aktiv Zustand
+            const navPills = document.querySelectorAll('.nav-pill');
+            navPills.forEach(pill => {
+                pill.addEventListener('click', function() {
+                    navPills.forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Hilfe-Button
+            const hilfeBtn = document.getElementById('hilfe-btn');
+            hilfeBtn.addEventListener('click', function() {
+                alert('Hallo! Ich bin Chickie, dein ResearchFriend. Hast du Fragen zu deinem Systematic Literature Review? Schreib mir eine E-Mail an hilfe@researchfriend.de');
+            });
+        });
+    </script>
+</body>
+</html>
